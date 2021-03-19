@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Загадки</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/puzzle.css">
+    
+    <script>
+                
+        var score = 0;
+        
+        function checkAnswer (inputId, answers){
+            var userAnswer = document.getElementById(inputId).value;
+            userAnswer = userAnswer.toLowerCase();
+            for(var i = 0; i < answers.length; i++){
+                if(userAnswer == answers[i]){
+                    score++;
+                    break;
+                }
+            }
+        }
+        
+        function write(text) {
+            document.getElementById("info").innerHTML = text;
+        }  
+        
+        function hide(id) {
+            document.getElementById(id).style.display = "none"; 
+        }
+        
+        function checkAnswers() {
+            checkAnswer("userAnswer1", ['кіт','котик']);
+            checkAnswer("userAnswer2", ['білка','білочка']);
+            checkAnswer("userAnswer3", ['черепаха','равлик']);
+            checkAnswer("userAnswer4", ['олень']);
+            write("Ви відгадали " +  score + " загадки "); 
+            hide("button");
+        }
+        
+    </script>
+    
+</head>
+
+<body>
+
+    <div class="content"> 
+        <nav>
+          <a href="index.html">Головна</a>
+          <a href="#">Загадки</a>
+          <a href="guess.html">Відгадай число</a>
+        </nav>
+
+        <header>
+          <h1 id="info">Відгадай загадки</h1>  
+        </header>
+
+        <div class="box-puzzle">
+           
+            <p>У нашої бабусі сидить дід у кожусі, проти печі гріється, без води умиється.</p>
+            <input type="text" id="userAnswer1">
+            
+            <p>В лісі вогник рудуватий, шишки лускає завзято.</p>
+            <input type="text" id="userAnswer2">
+            
+            <p>Куди повзе – за собою хату везе.</p>
+            <input type="text" id="userAnswer3">
+            
+            <p>Хто на своїй голові ліс носить?</p>
+            <input type="text" id="userAnswer4">
+            
+            <br>
+            <a href="#" onClick="checkAnswers();" id="button" >Перевірити</a> 
+           
+        </div>
+   
+     </div>
+    
+    <footer>
+        Copyright &copy; 2021 Tlumach-Kit company. All rights reserved.
+    </footer>
+    
+   
+     
+     
+</body>
+</html>

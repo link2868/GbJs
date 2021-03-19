@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Відгадай число</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/guess.css">
+     
+    <script>
+        var answer = parseInt(Math.random() * 100);
+        var attempt = 0;
+        var attemptsCount = 7;
+
+        function readInput() {
+            var number=document.getElementById("userAnswer").value;
+            return parseInt(number);
+        } 
+        
+        function write(text) {
+            document.getElementById("info").innerHTML = text;
+        }       
+         
+        function hide(id) {
+            document.getElementById(id).style.display = "none"; 
+        }
+                                    
+        function guess() {
+            attempt++;
+            var userAnswer = readInput();
+            if (userAnswer == answer) {
+                    write("Вітаю! Ви відгадали!");
+                    hide("button");
+                    hide("userAnswer");
+            } else if (attempt >= attemptsCount) {
+                    write("На жаль. Загадане число: " + answer);
+                    hide("button");
+                    hide("userAnswer");
+            } else if (userAnswer > answer) {
+                    write("Ваша відповідь більше загаданого числа. ВВедіть число від 0 до 100. <br> Спроба № " +(attempt+1) + "  з  7 ");
+            } else if (userAnswer < answer) {
+                    write("Ваша відповідь менше загаданого числа. ВВедіть число від 0 до 100. <br> Спроба № " +(attempt+1)+ "  з  7 ");
+            } 
+        }
+  
+    </script>
+    
+</head>
+
+<body>
+
+    <div class="content"> 
+        <nav>
+          <a href="index.html">Головна</a>
+          <a href="puzzle.html">Загадки</a>
+          <a href="#">Відгадай число</a>
+        </nav>
+
+        <header>
+          <h1>Відгадай число</h1>  
+        </header>
+
+        <div class="box-guess">
+            
+            <p id="info">Відгадай число від 0 до 100.</p>
+            <input type="text" id="userAnswer">
+            <br>
+            <a href="#" onClick="guess();" id="button">Перевірити</a>   
+
+        </div>
+    </div>
+    
+    <footer>
+        Copyright &copy; 2021 Tlumach-Kit company. All rights reserved.
+    </footer>
+    
+   
+     
+     
+</body>
+</html>

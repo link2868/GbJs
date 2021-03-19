@@ -1,0 +1,33 @@
+.box-puzzle {
+    margin: 0 auto;
+	margin-left: 10%;
+}
+
+.box-puzzle input {
+    width: 457px;
+    height: 34px;
+    font-size: 20px;
+    font-weight: 100;
+    background-color: #f5f5f5;
+    border: 1px solid #a0a0a0;
+    margin-bottom: 5%;
+}
+
+.box-puzzle a {
+    display: block;
+    float: left;
+    background-color: #8cbbd3;
+    color: aliceblue;
+    font-size: 24px;
+    font-weight: 300;
+    text-decoration: none;
+    text-align: center;
+    padding: 0.5% 1%;
+}
+
+.box-puzzle a:hover {
+    background-color: #5ba1d3;
+}
+
+footer { margin-top: 5%;
+}
