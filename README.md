@@ -1,2 +1,2 @@
-# link2868.github.io/GbJs
+# link2868/GbJs
 https://link2868.github.io/GbJs/
